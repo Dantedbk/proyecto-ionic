@@ -14,16 +14,16 @@
   
     <ion-card-content>
       <ion-item> 
-        <ion-input placeholder="username" #user> </ion-input>
+        <ion-input [(ngModel)]="usuario" placeholder="username" type="text" value=""> </ion-input>
       </ion-item>
       <ion-item> 
-        <ion-input placeholder="password" type="password" #pass> </ion-input>
+        <ion-input [(ngModel)]="contrasena" placeholder="password" type="text" value=""> </ion-input>
       </ion-item>
     </ion-card-content>
 
     <div class="row" style="text-align: center;padding-bottom: 20px;">
       <ion-button (click)="volverHome()">Volver </ion-button>
-      <ion-button (click)="ingresar(user,pass)">Login </ion-button>
+      <!-- <ion-button (click)="ingresar()">Login </ion-button> -->
     </div>
     <p style="text-align: center;color:cornflowerblue" (click)="recuperar()">Recuperar contraseña</p>
     
