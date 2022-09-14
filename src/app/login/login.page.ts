@@ -33,9 +33,9 @@ export class LoginPage implements OnInit {
   }
 
 
-  async ingresar (nom: HTMLInputElement, cont: HTMLInputElement){
+  async ingresar (){
 
-    if(this.usuario.toString() == '')
+    if(this.usuario == '')
     {
       const toast = await this.toastController.create({
         message : "Falta escribir el nombre",
@@ -44,17 +44,17 @@ export class LoginPage implements OnInit {
     toast.present();
 
   }
-    else if (this.contrasena.toString() == '')
+    else if (this.contrasena == '')
     {
       const toast = await this.toastController.create({
-        message : this.usuario.toString(),
+        message : "Falta escribir la contraseña",
         duration: 2000
     })
     toast.present();
     }
     else
-      alert(this.contrasena)
-
+      this.router.navigate(["./profile"])
+      localStorage.setItem('usuario',this.usuario.toString())
 
 }
 
