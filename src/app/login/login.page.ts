@@ -12,6 +12,8 @@ import { AppComponent } from '../app.component';
 
 export class LoginPage implements OnInit {
   mensaje : String
+  usuario : String
+  contrasena : String
   constructor(
     private router : Router,
     private alertController: AlertController,
@@ -33,7 +35,7 @@ export class LoginPage implements OnInit {
 
   async ingresar (nom: HTMLInputElement, cont: HTMLInputElement){
 
-    if(nom.value == '')
+    if(this.usuario.toString() == '')
     {
       const toast = await this.toastController.create({
         message : "Falta escribir el nombre",
@@ -42,17 +44,16 @@ export class LoginPage implements OnInit {
     toast.present();
 
   }
-    else if (cont.value == '')
+    else if (this.contrasena.toString() == '')
     {
       const toast = await this.toastController.create({
-        message : "Falta escribir la contraseña",
+        message : this.usuario.toString(),
         duration: 2000
     })
     toast.present();
     }
     else
-      this.router.navigate(["./profile"])
-      this.appComponent.usuario = nom.toString()
+      alert(this.contrasena)
 
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private appComponent : AppComponent
+  ) { }
 
   ngOnInit() {
+    document.getElementById("wea").innerHTML = localStorage.getItem('usuario')
   }
 
 }
