@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  private router : Router
+  usuario : String
+  contrasena : String
+  mensaje : String
+  constructor(private alertController: AlertController,
+    private toastController: ToastController) { }
+
+  setUsuario (usuario : String){
+    this.usuario = usuario
+  }
+
+  getUsuario (){
+    return this.usuario
+  }
+  
 }
