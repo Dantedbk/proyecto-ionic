@@ -8,18 +8,18 @@
 
   <ion-card>
     <ion-card-header>
-      <img src="assets/aaa.png" alt="" style="padding:10px;border-radius: 100%;">
+      <img src="assets/aaa.png" alt="" style="width: auto;margin: auto; display: block;">
     </ion-card-header>
   
     <ion-card-content>
       <ion-item> 
-        <ion-input placeholder="username"> </ion-input>
+        <ion-input placeholder="Correo Electrónico:" type="text" [(ngModel)]="correo" value=""> </ion-input>
       </ion-item>
     </ion-card-content>
 
     <div class="row " style="text-align: center;padding-bottom: 20px;">
       <ion-button (click)="volverHome()">Volver </ion-button>
-      <ion-button >Recuperar contraseña </ion-button>
+      <ion-button (click)="recuperar()" >Recuperar contraseña </ion-button>
     </div>
     
   </ion-card>

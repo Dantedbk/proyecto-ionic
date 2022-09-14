@@ -35,16 +35,17 @@ export class LoginPage implements OnInit {
 
   async ingresar (){
 
-    if(this.usuario == '')
+    if(this.usuario == null || "")
     {
       const toast = await this.toastController.create({
         message : "Falta escribir el nombre",
         duration: 2000
+        
     })
     toast.present();
 
   }
-    else if (this.contrasena == '')
+    else if (this.contrasena == null || "")
     {
       const toast = await this.toastController.create({
         message : "Falta escribir la contraseña",
@@ -52,10 +53,10 @@ export class LoginPage implements OnInit {
     })
     toast.present();
     }
-    else
+    else 
       this.router.navigate(["./profile"])
       localStorage.setItem('usuario',this.usuario.toString())
-
+    
 }
 
 
