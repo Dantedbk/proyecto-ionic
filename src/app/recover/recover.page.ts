@@ -47,8 +47,6 @@ export class RecoverPage implements OnInit {
     })
     toast.present();
     }
-    
-
   }
 
 }
