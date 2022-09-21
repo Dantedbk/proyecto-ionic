@@ -17,4 +17,6 @@ export class HomePage {
     this.router.navigate(['./login'])
   }
 
+
+
 }

@@ -31,7 +31,9 @@ export class LoginPage implements OnInit {
   recuperar(){
     this.router.navigate(["./recover"])
   }
-
+  goToRegistro() {
+    this.router.navigate(['./registro'])
+  }
 
   async ingresar (){
 

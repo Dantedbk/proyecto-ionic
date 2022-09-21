@@ -11,42 +11,45 @@ export class RecoverPage implements OnInit {
   correo : String
   constructor(
     private router : Router,
-    private toastController: ToastController) { }
+    private toastController: ToastController,
+    private alertController: AlertController) { }
+
 
   ngOnInit() {
   }
 
 
-  volverHome() {
-    this.router.navigate(["./home"])
+  volverLogin() {
+    this.router.navigate(["./login"])
   }
 
   async recuperar(){
     let regex = new RegExp(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)
     if (this.correo == null || "" ){
-      const toast = await this.toastController.create({
+      const alert = await this.alertController.create({
+        header : "Error",
         message : "Introduzca un correo electronico",
-        duration: 2000 
+        buttons: ["c:"]
     })
-    toast.present();
+    alert.present();
     }
     else if (!regex.test(this.correo.toString())){
-      const toast = await this.toastController.create({
-        message : "Introduzca un formato de correo válido",
-        duration: 2000
-
+      const alert = await this.alertController.create({
+        header : "Error",
+        message : "Formato de correo invalido",
+        buttons: ["Volver"]
     })
-    toast.present();
+    this.correo = null
+    alert.present();
     }
     else if (this.correo != null || ""){
       this.correo = null
       const toast = await this.toastController.create({
-        message : "De existir registro, se enviarán instrucciones de restablecimiento",
+        message : "Correo de recuperacion enviado",
         duration: 2000
 
     })
     toast.present();
     }
   }
-
 }

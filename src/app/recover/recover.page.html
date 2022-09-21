@@ -12,14 +12,18 @@
     </ion-card-header>
   
     <ion-card-content>
+
       <ion-item> 
         <ion-input placeholder="Correo Electrónico:" type="text" [(ngModel)]="correo" value=""> </ion-input>
       </ion-item>
     </ion-card-content>
 
     <div class="row " style="text-align: center;padding-bottom: 20px;">
-      <ion-button (click)="volverHome()">Volver </ion-button>
+      <br>
       <ion-button (click)="recuperar()" >Recuperar contraseña </ion-button>
+      <br>
+      <br>
+      <ion-button (click)="volverLogin()">Volver </ion-button>
     </div>
     
   </ion-card>
