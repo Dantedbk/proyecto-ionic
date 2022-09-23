@@ -58,7 +58,8 @@ export class LoginPage implements OnInit {
     else 
       this.router.navigate(["./profile"])
       localStorage.setItem('usuario',this.usuario.toString())
-    
+      this.usuario = null
+      this.contrasena = null
 }
 
 

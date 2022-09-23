@@ -35,14 +35,15 @@ export class RegistroPage implements OnInit {
     this.dv = null
   }
   async Crear() {
+
     let regex = new RegExp(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)
     let wiwiwi = "Campos: "
     let flag = 0
-    if (this.usuario == null || "") { wiwiwi += "usuario - "; flag = 1 }
-    if ((this.contrasena == null || "") && (this.contrasena2 == null || "")) { wiwiwi += "contraseña - "; flag = 1 }
-    if (this.correo == null || "") { wiwiwi += "correo "; flag = 1 }
-    else if (!regex.test(this.correo.toString())) { wiwiwi += "formato de correo invalido "; flag = 2 }
-    if (flag == 1) {wiwiwi += "vacíos"} else if (flag == 2) {".";flag= 1}
+    if (this.usuario == null || "") { wiwiwi += "usuario, "; flag = 1 }
+    if ((this.contrasena == null || "") && (this.contrasena2 == null || "")) { wiwiwi += "contraseña, "; flag = 1 }
+    if (this.correo == null || "") { wiwiwi += "correo vacíos"; flag = 1 }
+    else if (!regex.test(this.correo.toString())) { wiwiwi += "formato de correo invalido"; flag = 2 }
+    else if (flag == 1) {wiwiwi += "vacíos"}
     if ((this.contrasena != this.contrasena2)) { wiwiwi += ", contraseñas no coinciden"; flag = 1 }
     
 
@@ -66,7 +67,7 @@ export class RegistroPage implements OnInit {
      {
       wiwiwi += ", rut invalido"; flag = 1
      }
-
+     
     if (flag == 1) {
       
       const alert = await this.alertController.create({
