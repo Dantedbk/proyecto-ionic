@@ -47,7 +47,6 @@ export class RegistroPage implements OnInit {
     if ((this.contrasena != this.contrasena2)) { wiwiwi += ", contraseñas no coinciden"; flag = 1 }
     
 
-
     var suma = 0;
     var serie = 2
     
