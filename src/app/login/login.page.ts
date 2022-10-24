@@ -14,6 +14,8 @@ export class LoginPage implements OnInit {
   mensaje : String
   usuario : String
   contrasena : String
+  tipo : String
+  status : false
   constructor(
     private router : Router,
     private alertController: AlertController,
@@ -24,6 +26,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+
+
   volverHome() {
     this.router.navigate(["./home"])
   }
@@ -33,6 +37,17 @@ export class LoginPage implements OnInit {
   }
   goToRegistro() {
     this.router.navigate(['./registro'])
+  }
+
+
+  cambiar() {
+    if (this.status) {
+      document.getElementById("perfil").innerHTML = "Docente ";
+    }
+    else {
+      document.getElementById("perfil").innerHTML = "Alumno ";
+
+    }
   }
 
   async ingresar (){

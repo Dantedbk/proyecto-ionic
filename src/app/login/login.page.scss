@@ -1,0 +1,24 @@
+ion-toggle {
+    height: 20px;
+    width: 50px;
+  
+    padding: 12px;
+  
+    --background: #ddd;
+    --background-checked: #ddd;
+  
+    --handle-background: #2a3160;
+    --handle-background-checked: #95c34e;
+  
+    --handle-width: 30px;
+    --handle-height: 20px;
+    --handle-max-height: auto;
+    --handle-spacing: 0px;
+  
+    --handle-border-radius: 10px;
+    --handle-box-shadow: none;
+  
+    /* Required for iOS handle to overflow the height of the track */
+    overflow: visible;
+    contain: none;
+  }

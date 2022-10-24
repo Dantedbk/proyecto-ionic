@@ -46,6 +46,9 @@ export class RegistroPage implements OnInit {
     else if (flag == 1) {wiwiwi += "vacíos"}
     if ((this.contrasena != this.contrasena2)) { wiwiwi += ", contraseñas no coinciden"; flag = 1 }
     
+    
+    // barcodescanner jqr
+
 
     var suma = 0;
     var serie = 2
@@ -80,12 +83,12 @@ export class RegistroPage implements OnInit {
     }
     else if (flag == 0) {
       const toast = await this.toastController.create({
-        message: "Cuenta creada",
-        duration: 2000
-        
-      })
-      toast.present();
-      this.clear()
+          message: "Cuenta creada",
+          duration: 2000
+          
+        })
+        toast.present();
+        this.clear()
+      }
     }
   }
-}

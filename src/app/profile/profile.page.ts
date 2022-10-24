@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { Router } from '@angular/router'
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -20,5 +21,8 @@ export class ProfilePage implements OnInit {
   volverHome() {
     this.router.navigate(["./home"])
     localStorage.clear();
+  }
+  Marcar(){
+
   }
 }

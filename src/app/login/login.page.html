@@ -19,9 +19,17 @@
       <ion-item> 
         <ion-input [(ngModel)]="contrasena" placeholder="password" type="password" value=""> </ion-input>
       </ion-item>
+
+      <ion-item>
+        <b>Modo:&nbsp;</b><span id="perfil"> Alumno</span>
+
+        <ion-toggle slot="end" [(ngModel)]="status" (ionChange)="cambiar()" color="warning" ></ion-toggle>
+      </ion-item>
     </ion-card-content>
 
     <div class="row" style="text-align: center;padding-bottom: 10px;">
+
+
       <ion-button (click)="volverHome()">Volver </ion-button>
       <ion-button (click)="ingresar()">Login </ion-button>
     </div>
