@@ -29,7 +29,7 @@ export class RecoverPage implements OnInit {
       const alert = await this.alertController.create({
         header : "Error",
         message : "Introduzca un correo electronico",
-        buttons: ["c:"]
+        buttons: ["Volver"]
     })
     alert.present();
     }
